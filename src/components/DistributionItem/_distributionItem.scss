@@ -1,0 +1,42 @@
+.distribution-item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 38% 22% 30% 20px;
+    gap: 12px;
+    padding: 18px;
+    border: 1px solid #75CAFF33;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &__title {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 120%;
+        color: #0188DA;
+    }
+
+    &__source {
+        color: #999999;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 120%;
+    }
+
+    &__statistic {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+
+    &:hover {
+        background: #F0F8FD;
+    }
+}

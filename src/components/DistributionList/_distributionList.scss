@@ -1,0 +1,20 @@
+.distribution-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 12px;
+    line-height: 110%;
+
+    &__head {
+        display: grid;
+        grid-template-columns: 38% 22% 30% 20px;
+        gap: 12px;
+        padding: 0 18px;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+    }
+}

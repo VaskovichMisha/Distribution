@@ -1,0 +1,45 @@
+.tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 20px;
+    transition: all 0.3s;
+    color: #303030;
+
+    & span {
+        transition: all 0.3s;
+    }
+
+    &:hover {
+        background: #F0F8FD;
+        transition: all 0.3s;
+
+        & span {
+            color: #0188DA;
+            transition: all 0.3s;
+        }
+    }
+}
+
+.active {
+    background: #F0F8FD;
+    transition: all 0.3s;
+
+    & span {
+        color: #0188DA;
+        transition: all 0.3s;
+    }
+}
+
+.fill-active path {
+    fill: #0188DA;
+    transition: all 0.3s;
+}

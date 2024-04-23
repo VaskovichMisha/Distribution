@@ -1,0 +1,44 @@
+.open-dropdown path,
+.open-dropdown ellipse {
+    fill: #0188DA;
+}
+
+.d-dropdown-options {
+    position: relative;
+
+    &__button {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        background: #fff;
+        border-radius: 6px;
+        padding: 16px 8px;
+        font-weight: 400;
+        border: 1px solid #D7EFFD;
+        position: absolute;
+        top: calc(100% + 4px);
+        min-width: 150px;
+        right: 0;
+        z-index: 2;
+    }
+
+    &__item {
+        width: 100%;
+        text-align: left;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: all 0.3s;
+        color: #8CA0B4;
+
+        &:hover {
+            background: #F0F8FD;
+            color: #0188DA;
+            transition: all 0.3s;
+        }
+    }
+}
