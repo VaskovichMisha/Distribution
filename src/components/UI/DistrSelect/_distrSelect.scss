@@ -1,0 +1,67 @@
+.distribution-select {
+    width: 100%;
+    position: relative;
+    font-size: 12px;
+
+    &__selected {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 11px 16px;
+        border: 1px solid #0188DA;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            background: #F0F8FD;
+            border-radius: 5px;
+            color: #0188DA;
+            transition: all 0.3s;
+        }
+
+        & > img {
+            transition: all 0.3s;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #0188DA;
+        border-radius: 5px;
+        padding: 4px;
+        max-height: 136px;
+        overflow-y: auto;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    &__item {
+        padding: 6px 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            background: #F0F8FD;
+            border-radius: 5px;
+            color: #0188DA;
+            transition: all 0.3s;
+        }
+    }
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+    transition: all 0.5s;
+}

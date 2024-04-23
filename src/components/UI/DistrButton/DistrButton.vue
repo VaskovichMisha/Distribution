@@ -14,7 +14,7 @@ const props = defineProps({
     type: String,
     default: 'blue'
   }
-});
+})
 </script>
 
 <style lang="scss" scoped>

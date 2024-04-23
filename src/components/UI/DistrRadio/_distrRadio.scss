@@ -1,0 +1,41 @@
+.distribution-radio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    & input[type=radio] {
+        width: 16px;
+        height: 16px;
+    }
+
+    & label {
+        font-size: 12px;
+    }
+    //
+    //& input[type=radio]+label {
+    //    display: inline-flex;
+    //    align-items: center;
+    //    user-select: none;
+    //}
+    //
+    //& input[type=radio]+label::before {
+    //    content: '';
+    //    display: inline-block;
+    //    width: 1em;
+    //    height: 1em;
+    //    flex-shrink: 0;
+    //    flex-grow: 0;
+    //    border: 1px solid #adb5bd;
+    //    border-radius: 50%;
+    //    margin-right: 0.5em;
+    //    background-repeat: no-repeat;
+    //    background-position: center center;
+    //    background-size: 50% 50%;
+    //}
+    //
+    //& input[type=radio]:checked+label::before {
+    //    border-color: #0b76ef;
+    //    background-color: #0b76ef;
+    //    background-image: url("@/assets/svg/radio.svg");
+    //}
+}

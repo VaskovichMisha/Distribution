@@ -8,14 +8,21 @@
     }
 
     &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
         padding: 16px;
     }
 
-    &__radio-btn {
-
+    &__radio-buttons {
+        display: flex;
+        align-items: center;
+        gap: 24px;
     }
 
     &__selects {
-
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 }
