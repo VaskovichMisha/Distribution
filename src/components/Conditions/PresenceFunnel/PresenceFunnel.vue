@@ -18,8 +18,8 @@
       </div>
       <div class="distribution-condition__selects">
         <DistrSelect
-          :selectData="selectFunnel"
-          selected="Выберите воронку"
+            :selectData="selectFunnel"
+            selected="Выберите воронку"
         />
         <DistrSelect
             :selectData="selectStage"
@@ -31,8 +31,8 @@
 </template>
 
 <script lang="ts" setup>
-import DistrRadio from "@/components/UI/DistrRadio/DistrRadio.vue";
-import DistrSelect from "@/components/UI/DistrSelect/DistrSelect.vue";
+import DistrRadio from "@/components/UI/Radio/Radio.vue";
+import DistrSelect from "@/components/UI/Select/Select.vue";
 import { ref } from "vue";
 
 const selectFunnel = ref([
@@ -53,5 +53,5 @@ const selectStage = ref([
 </script>
 
 <style lang="scss" scoped>
-@import "distributionCondition";
+@import "presenceFunnel";
 </style>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import DistributionHeader from "@/components/UI/DistrHeader/DistrHeader.vue";
+import DistributionHeader from "@/components/Header/Header.vue";
 
 export default {
   components: {DistributionHeader}

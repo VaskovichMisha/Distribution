@@ -23,11 +23,11 @@
 </template>
 
 <script lang="ts" setup>
-import DistributionSearch from "@/components/UI/DistrSearch/DistrSearch.vue";
+import DistributionSearch from "@/components/UI/Search/Search.vue";
 import DistributionList from "@/components/DistributionList/DistributionList.vue";
-import DistrButton from "@/components/UI/DistrButton/DistrButton.vue";
-import DistributionNotFound from "@/components/DistributionNotFound/DistributionNotFound.vue";
-import DistributionEmpty from "@/components/DistributionEmpty/DistributionEmpty.vue";
+import DistrButton from "@/components/UI/Button/Button.vue";
+import DistributionNotFound from "@/components/NotFound/NotFound.vue";
+import DistributionEmpty from "@/components/Empty/Empty.vue";
 import router from "@/router";
 
 </script>

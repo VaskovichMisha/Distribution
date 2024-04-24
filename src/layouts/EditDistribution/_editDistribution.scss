@@ -107,7 +107,21 @@
         }
 
         &-setting {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
 
+        &-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+
+            & > button {
+                width: 100%;
+            }
         }
 
         &-block {
@@ -156,6 +170,14 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 8px;
         }
+    }
+
+    &__select {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
     }
 
     &__buttons {

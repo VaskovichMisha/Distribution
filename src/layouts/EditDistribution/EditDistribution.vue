@@ -41,7 +41,35 @@
         </div>
         <div class="edit-distribution__recipients-container">
           <div class="edit-distribution__recipients-setting">
-
+            <div class="edit-distribution__select">
+              <span>Выберите источник</span>
+              <Select
+                  selected="ifaceup_bot"
+                  :select-data="source"
+              />
+            </div>
+            <div class="edit-distribution__select">
+              <span>Получатели соответствуют</span>
+              <Select
+                  selected="Одному из условий"
+                  :select-data="condition"
+              />
+            </div>
+            <div class="edit-distribution__recipients-buttons">
+              <Button
+                  text="Добавить условие"
+                  color="light-blue"
+              >
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.5 1V10" stroke="#0188DA" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M10 5.5L1 5.5" stroke="#0188DA" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </Button>
+              <Button
+                  text="Сбросить все условия"
+                  color="white"
+              />
+            </div>
           </div>
           <div class="edit-distribution__recipients-block">
             <div class="edit-distribution__recipients-amount">
@@ -57,7 +85,8 @@
           </div>
         </div>
         <div class="edit-distribution__recipients-conditions">
-          <DistributionCondition />
+          <PresenceFunnel />
+          <GroupSubscribers />
         </div>
       </div>
       <div class="edit-distribution__recipients">
@@ -97,9 +126,26 @@
 </template>
 
 <script setup lang="ts">
+import DistrButton from "@/components/UI/Button/Button.vue";
+import PresenceFunnel from "@/components/Conditions/PresenceFunnel/PresenceFunnel.vue";
+import Select from "@/components/UI/Select/Select.vue";
+import Button from "@/components/UI/Button/Button.vue";
+import { ref } from "vue";
+import GroupSubscribers from "@/components/Conditions/GroupSubscribers/GroupSubscribers.vue";
 
-import DistrButton from "@/components/UI/DistrButton/DistrButton.vue";
-import DistributionCondition from "@/components/DistributionCondition/DistributionCondition.vue";
+const source = ref([
+  { name: 'ifaceup_bot', id: 0 },
+  { name: 'ifaceup_bot', id: 1 },
+  { name: 'ifaceup_bot', id: 2 },
+  { name: 'ifaceup_bot', id: 3 },
+  { name: 'ifaceup_bot', id: 4 },
+])
+
+const condition = ref([
+  { name: 'Одному из условий', id: 0 },
+  { name: 'Всем условиям', id: 2 },
+])
+
 </script>
 
 <style lang="scss" scoped>

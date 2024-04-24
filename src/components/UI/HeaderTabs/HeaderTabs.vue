@@ -84,5 +84,5 @@ watch(router.currentRoute, () => {
 </script>
 
 <style lang="scss" scoped>
-@import "distrHeaderTabs";
+@import "headerTabs";
 </style>

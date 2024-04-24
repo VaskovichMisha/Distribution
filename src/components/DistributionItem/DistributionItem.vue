@@ -22,7 +22,7 @@
 
 <script lang="ts" setup>
 import { defineProps } from 'vue'
-import DistrDropdownOptions from "@/components/UI/DistrDropdownOptions/DistrDropdownOptions.vue";
+import DistrDropdownOptions from "@/components/UI/DropdownOptions/DropdownOptions.vue";
 
 const props = defineProps({
   item: Object as () => { title?: string }

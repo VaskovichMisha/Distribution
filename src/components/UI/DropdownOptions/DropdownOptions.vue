@@ -34,5 +34,5 @@ const toggleDropdown = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "distrDropdownOptions";
+@import "dropdownOptions";
 </style>

@@ -18,5 +18,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "distrButton";
+@import "button";
 </style>

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import HeaderTabs from "@/components/UI/DistrHeaderTabs/DistrHeaderTabs.vue";
+import HeaderTabs from "@/components/UI/HeaderTabs/HeaderTabs.vue";
 export default {
   components: {
     HeaderTabs
@@ -17,5 +17,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "distrHeader";
+@import "header";
 </style>

@@ -1,0 +1,28 @@
+.distribution-condition {
+    border: 1px solid #D7EFFD;
+    border-radius: 5px;
+
+    &__head {
+        padding: 10px 16px;
+        background: #0188DA0D;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    &__radio-buttons {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    &__selects {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}

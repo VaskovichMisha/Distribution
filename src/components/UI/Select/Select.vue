@@ -42,5 +42,5 @@ const changeSelected = (item: Object) => {
 </script>
 
 <style lang="scss" scoped>
-@import "distrSelect";
+@import "select";
 </style>

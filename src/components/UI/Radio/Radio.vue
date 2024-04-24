@@ -16,5 +16,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "distrRadio";
+@import "radio";
 </style>

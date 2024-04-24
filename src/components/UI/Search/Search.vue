@@ -12,5 +12,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "distrSearch";
+@import "search";
 </style>

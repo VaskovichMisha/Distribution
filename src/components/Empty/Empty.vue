@@ -19,9 +19,9 @@
 </template>
 
 <script lang="ts" setup>
-import DistrButton from "@/components/UI/DistrButton/DistrButton.vue";
+import DistrButton from "@/components/UI/Button/Button.vue";
 </script>
 
 <style lang="scss" scoped>
-@import "distributionEmpty";
+@import "empty";
 </style>
