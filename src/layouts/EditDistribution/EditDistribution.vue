@@ -59,6 +59,7 @@
               <Button
                   text="Добавить условие"
                   color="light-blue"
+                  @click="isSelectingCondition = !isSelectingCondition"
               >
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.5 1V10" stroke="#0188DA" stroke-width="2" stroke-linecap="round"/>
@@ -68,6 +69,10 @@
               <Button
                   text="Сбросить все условия"
                   color="white"
+              />
+              <SelectingCondition
+                  v-if="isSelectingCondition"
+                  @select-condition="selectCondition"
               />
             </div>
           </div>
@@ -85,8 +90,12 @@
           </div>
         </div>
         <div class="edit-distribution__recipients-conditions">
-          <PresenceFunnel />
-          <GroupSubscribers />
+          <PresenceFunnel v-if="isSelected[1]" />
+          <GroupSubscribers v-if="isSelected[2]" />
+          <AvailabilityStep v-if="isSelected[3]" />
+          <PresenceLabel v-if="isSelected[4]" />
+          <ContainsTags v-if="isSelected[5]" />
+          <MatchFields v-if="isSelected[6]" />
         </div>
       </div>
       <div class="edit-distribution__recipients">
@@ -130,8 +139,17 @@ import DistrButton from "@/components/UI/Button/Button.vue";
 import PresenceFunnel from "@/components/Conditions/PresenceFunnel/PresenceFunnel.vue";
 import Select from "@/components/UI/Select/Select.vue";
 import Button from "@/components/UI/Button/Button.vue";
-import { ref } from "vue";
 import GroupSubscribers from "@/components/Conditions/GroupSubscribers/GroupSubscribers.vue";
+import AvailabilityStep from "@/components/Conditions/AvailabilityStep/AvailabilityStep.vue";
+import Planned from "@/views/DistributionView/Planned/Planned.vue";
+import PresenceLabel from "@/components/Conditions/PresenceLabel/PresenceLabel.vue";
+import ContainsTags from "@/components/Conditions/ContainsTags/ContainsTags.vue";
+import MatchFields from "@/components/Conditions/MatchFields/MatchFields.vue";
+import SelectingCondition from "@/components/UI/SelectingCondition/SelectingCondition.vue";
+
+import { ref, computed  } from "vue";
+
+const isSelectingCondition = ref(false)
 
 const source = ref([
   { name: 'ifaceup_bot', id: 0 },
@@ -145,6 +163,27 @@ const condition = ref([
   { name: 'Одному из условий', id: 0 },
   { name: 'Всем условиям', id: 2 },
 ])
+
+const selectedConditions = ref([])
+
+const isSelected = computed(() => {
+  const isSelectedObj: Record<number, boolean> = {}
+  selectedConditions.value.forEach(id => {
+    isSelectedObj[id] = true
+  })
+  return isSelectedObj
+})
+const selectCondition = (id: number) => {
+  if (isSelected.value[id]) {
+    const index = selectedConditions.value.indexOf(id)
+
+    if (index > -1) {
+      selectedConditions.value.splice(index, 1)
+    }
+  } else {
+    selectedConditions.value.push(id)
+  }
+}
 
 </script>
 

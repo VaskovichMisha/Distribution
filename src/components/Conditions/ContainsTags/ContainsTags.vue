@@ -1,38 +1,28 @@
 <template>
   <div class="distribution-condition">
     <div class="distribution-condition__head">
-      Наличие в этапе воронки
+      Содержит теги
     </div>
     <div class="distribution-condition__container">
       <div class="distribution-condition__radio-buttons">
         <Radio
             text="Содержится"
-            name="radio"
-            id="radio_1"
+            name="radio-tags"
+            id="radio_tags_1"
         />
         <Radio
             text="Не содержится"
-            name="radio"
-            id="radio_2"
+            name="radio-tags"
+            id="radio_tags_2"
         />
       </div>
-      <div class="distribution-condition__selects">
-        <Select
-            :selectData="selectFunnel"
-            selected="Выберите воронку"
-        />
-        <Select
-            :selectData="selectStage"
-            selected="Выберите эпап"
-        />
-      </div>
+      <input class="distribution-condition__input" type="text" placeholder="Введите теги через запятую">
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import Radio from "@/components/UI/Radio/Radio.vue";
-import Select from "@/components/UI/Select/Select.vue";
 import { ref } from "vue";
 
 const selectFunnel = ref([
@@ -53,5 +43,5 @@ const selectStage = ref([
 </script>
 
 <style lang="scss" scoped>
-@import "presenceFunnel";
+@import "containsTags";
 </style>

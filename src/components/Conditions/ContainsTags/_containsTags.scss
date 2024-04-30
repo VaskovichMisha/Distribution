@@ -21,9 +21,11 @@
         gap: 24px;
     }
 
-    &__selects {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+    &__input {
+        background: #FFFFFF;
+        border: 1px solid #0188DA;
+        border-radius: 5px;
+        padding: 10px 16px;
+        font-size: 12px;
     }
 }

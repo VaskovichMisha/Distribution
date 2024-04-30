@@ -5,19 +5,19 @@
     </div>
     <div class="distribution-condition__container">
       <div class="distribution-condition__radio-buttons">
-        <DistrRadio
+        <Radio
             text="Подписан"
             name="radio-subscribers"
             id="radio_subscribers_1"
         />
-        <DistrRadio
+        <Radio
             text="Не подписан"
             name="radio-subscribers"
             id="radio_subscribers_2"
         />
       </div>
       <div class="distribution-condition__selects">
-        <DistrSelect
+        <Select
             :selectData="selectFunnel"
             selected="Выберите группу"
         />
@@ -27,8 +27,8 @@
 </template>
 
 <script lang="ts" setup>
-import DistrRadio from "@/components/UI/Radio/Radio.vue";
-import DistrSelect from "@/components/UI/Select/Select.vue";
+import Radio from "@/components/UI/Radio/Radio.vue";
+import Select from "@/components/UI/Select/Select.vue";
 import { ref } from "vue";
 
 const selectFunnel = ref([
