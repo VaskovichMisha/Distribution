@@ -1,14 +1,20 @@
 <template>
   <div class="distribution-search">
     <img src="@/assets/svg/search.svg" alt="search">
-    <input type="text" placeholder="Введите название рассылки для поиска">
+    <input type="text" :placeholder="placeholder">
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts" setup>
+import { defineProps } from 'vue'
 
-}
+const props = defineProps({
+  placeholder: {
+    type: String,
+    default: ''
+  }
+})
+
 </script>
 
 <style lang="scss" scoped>

@@ -2,8 +2,10 @@
   <div class="distribution__container">
     <div v-if="false" class="planned">
       <div class="planned__head">
-        <DistributionSearch />
-        <DistrButton
+        <Search
+            placeholder="Введите название рассылки для поиска"
+        />
+        <Button
             text="Создать рассылку"
             color="blue"
             @click="$router.push('/edit-distribution')"
@@ -12,22 +14,22 @@
             <path d="M5.5 1V10" stroke="white" stroke-width="2" stroke-linecap="round"/>
             <path d="M10 5.5L1 5.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
           </svg>
-        </DistrButton>
+        </Button>
       </div>
       <DistributionList />
     </div>
 
-    <DistributionEmpty />
-    <DistributionNotFound v-if="false" />
+    <Empty />
+    <NotFound v-if="false" />
   </div>
 </template>
 
 <script setup lang="ts">
-import DistributionSearch from "@/components/UI/Search/Search.vue";
-import DistrButton from "@/components/UI/Button/Button.vue";
+import Search from "@/components/UI/Search/Search.vue";
+import Button from "@/components/UI/Button/Button.vue";
 import DistributionList from "@/components/DistributionList/DistributionList.vue";
-import DistributionEmpty from "@/components/Empty/Empty.vue";
-import DistributionNotFound from "@/components/NotFound/NotFound.vue";
+import Empty from "@/components/Empty/Empty.vue";
+import NotFound from "@/components/NotFound/NotFound.vue";
 </script>
 
 <style lang="scss" scoped>

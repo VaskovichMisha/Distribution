@@ -69,10 +69,17 @@
               <Button
                   text="Сбросить все условия"
                   color="white"
+                  @click="isResettingConditions = !isResettingConditions"
               />
               <SelectingCondition
                   v-if="isSelectingCondition"
                   @select-condition="selectCondition"
+                  :is-selected="isSelected"
+              />
+              <ResettingConditions
+                  v-if="isResettingConditions"
+                  @resetting-condition="resettingCondition"
+                  @cancel-condition="isResettingConditions = false"
               />
             </div>
           </div>
@@ -82,7 +89,7 @@
                 <img src="@/assets/svg/fi-sr-user.svg" alt="">
                 <span>Получателей: 234</span>
               </div>
-              <button>Посмотреть всех</button>
+              <button @click="isAllRecipient = true">Посмотреть всех</button>
             </div>
             <div class="edit-distribution__recipients-avatars">
               <img v-for="i in 12" src="@/assets/image/avatar.png" alt="avatar">
@@ -98,10 +105,14 @@
           <MatchFields v-if="isSelected[6]" />
         </div>
       </div>
-      <div class="edit-distribution__recipients">
+      <div class="edit-distribution__dispatch">
         <div class="edit-distribution__subtitle">
           <div>3</div>
           <h3>Отправка</h3>
+        </div>
+        <div class="edit-distribution__dispatch-block">
+          <span>Дата рассылки</span>
+          <div class="edit-distribution__dispatch-date">03.10.2023 15:22 МСК</div>
         </div>
       </div>
       <div class="edit-distribution__buttons">
@@ -132,6 +143,10 @@
       </div>
     </div>
   </div>
+  <AllRecipients
+      v-if="isAllRecipient"
+      @close-all-recipients="isAllRecipient = false"
+  />
 </template>
 
 <script setup lang="ts">
@@ -148,8 +163,13 @@ import MatchFields from "@/components/Conditions/MatchFields/MatchFields.vue";
 import SelectingCondition from "@/components/UI/SelectingCondition/SelectingCondition.vue";
 
 import { ref, computed  } from "vue";
+import ResettingConditions from "@/components/UI/ResettingConditions/ResettingConditions.vue";
+import AllRecipients from "@/components/Modals/AllRecipients/AllRecipients.vue";
 
 const isSelectingCondition = ref(false)
+const isResettingConditions = ref(false)
+const isAllRecipient = ref(false)
+const selectedConditions = ref([])
 
 const source = ref([
   { name: 'ifaceup_bot', id: 0 },
@@ -164,8 +184,6 @@ const condition = ref([
   { name: 'Всем условиям', id: 2 },
 ])
 
-const selectedConditions = ref([])
-
 const isSelected = computed(() => {
   const isSelectedObj: Record<number, boolean> = {}
   selectedConditions.value.forEach(id => {
@@ -173,6 +191,7 @@ const isSelected = computed(() => {
   })
   return isSelectedObj
 })
+
 const selectCondition = (id: number) => {
   if (isSelected.value[id]) {
     const index = selectedConditions.value.indexOf(id)
@@ -183,6 +202,12 @@ const selectCondition = (id: number) => {
   } else {
     selectedConditions.value.push(id)
   }
+}
+
+const resettingCondition = () => {
+  selectedConditions.value = []
+  isResettingConditions.value = false
+  isSelectingCondition.value = false
 }
 
 </script>

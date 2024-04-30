@@ -1,0 +1,23 @@
+.resetting-condition {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #FFFFFF;
+    border: 1px solid #D7EFFD;
+    border-radius: 5px;
+    padding: 16px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 4px);
+    z-index: 51;
+
+    &__title {
+
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}

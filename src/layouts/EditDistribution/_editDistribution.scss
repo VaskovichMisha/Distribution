@@ -179,6 +179,31 @@
         justify-content: space-between;
         align-items: center;
         gap: 8px;
+        font-size: 12px;
+    }
+
+    &__dispatch {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background: #FFFFFF;
+        border: 1px solid #E7ECEF;
+        border-radius: 7px;
+        padding: 24px 20px;
+
+        &-block {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 12px;
+        }
+
+        &-date {
+            background: #FFFFFF;
+            border: 1px solid #D7EFFD;
+            border-radius: 5px;
+            padding: 10px 24px;
+        }
     }
 
     &__buttons {

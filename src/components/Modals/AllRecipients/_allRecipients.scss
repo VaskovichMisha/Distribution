@@ -1,0 +1,64 @@
+.all-recipients {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    &__wrapper {
+        width: 692px;
+        background: #FFFFFF;
+        border: 1px solid #D7EFFD;
+        border-radius: 5px;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        background: #0188DA0D;
+        padding: 10px 12px;
+
+        & > img {
+            cursor: pointer;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 12px;
+        gap: 14px;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
