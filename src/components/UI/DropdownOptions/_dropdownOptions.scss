@@ -42,3 +42,28 @@
         }
     }
 }
+
+@media (max-width: 576px) {
+    .d-dropdown-options {
+
+        &__button {
+
+            & > svg {
+                width: 15px;
+                height: auto;
+            }
+        }
+
+        &__list {
+            gap: 2px;
+            border-radius: 5px;
+            padding: 2px 4px;
+            font-size: 10px;
+            min-width: 120px;
+        }
+
+        &__item {
+            padding: 4px 6px;
+        }
+    }
+}

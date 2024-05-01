@@ -1,0 +1,33 @@
+<template>
+  <div class="pagination">
+    <svg class="pagination__arrow-left" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.88779 11.083C6.71655 11.2542 6.43891 11.2542 6.26766 11.083L2.71878 7.53411C2.63654 7.45187 2.59035 7.34034 2.59035 7.22404C2.59035 7.10775 2.63654 6.99622 2.71878 6.91398L6.26766 3.3651C6.43891 3.19385 6.71655 3.19385 6.88779 3.3651C7.05903 3.53634 7.05903 3.81398 6.88779 3.98522L3.64897 7.22404L6.88779 10.4629C7.05903 10.6341 7.05903 10.9118 6.88779 11.083Z" fill="#C4CAD4"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M13.4064 7.22386C13.4064 7.46604 13.2101 7.66236 12.9679 7.66236H3.12805C2.88588 7.66236 2.68956 7.46604 2.68956 7.22386C2.68956 6.98169 2.88588 6.78537 3.12805 6.78537H12.9679C13.2101 6.78537 13.4064 6.98169 13.4064 7.22386Z" fill="#C4CAD4"/>
+    </svg>
+    <div class="pagination__container">
+      <span class="pagination__item">1</span>
+      <span class="pagination__item">2</span>
+      <span class="pagination__item">3</span>
+      <span class="pagination__item">4</span>
+      <span class="pagination__item">5</span>
+      <span class="pagination__item">...</span>
+      <span class="pagination__item">16</span>
+      <span class="pagination__item">17</span>
+      <span class="pagination__item">18</span>
+      <span class="pagination__item">19</span>
+      <span class="pagination__item">20</span>
+    </div>
+    <svg class="pagination__arrow-right" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.88779 11.083C6.71655 11.2542 6.43891 11.2542 6.26766 11.083L2.71878 7.53411C2.63654 7.45187 2.59035 7.34034 2.59035 7.22404C2.59035 7.10775 2.63654 6.99622 2.71878 6.91398L6.26766 3.3651C6.43891 3.19385 6.71655 3.19385 6.88779 3.3651C7.05903 3.53634 7.05903 3.81398 6.88779 3.98522L3.64897 7.22404L6.88779 10.4629C7.05903 10.6341 7.05903 10.9118 6.88779 11.083Z" fill="#C4CAD4"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M13.4064 7.22386C13.4064 7.46604 13.2101 7.66236 12.9679 7.66236H3.12805C2.88588 7.66236 2.68956 7.46604 2.68956 7.22386C2.68956 6.98169 2.88588 6.78537 3.12805 6.78537H12.9679C13.2101 6.78537 13.4064 6.98169 13.4064 7.22386Z" fill="#C4CAD4"/>
+    </svg>
+  </div>
+</template>
+
+<script lang="ts" setup>
+
+</script>
+
+<style lang="scss" scoped>
+@import "pagination";
+</style>

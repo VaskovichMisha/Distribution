@@ -18,3 +18,30 @@
         font-weight: 600;
     }
 }
+
+@media (max-width: 576px) {
+    .distribution-empty {
+        gap: 20px;
+        padding: 60px 0;
+
+        & > img {
+            width: 67px;
+            height: auto;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            & > span {
+                font-size: 10px;
+            }
+        }
+
+        &__title {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+}

@@ -12,3 +12,20 @@
         font-weight: 600;
     }
 }
+
+@media (max-width: 576px) {
+    .distribution-not-found {
+        gap: 20px;
+        padding: 60px 0;
+
+        & > img {
+            width: 67px;
+            height: auto;
+        }
+
+        &__title {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+}

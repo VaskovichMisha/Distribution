@@ -13,9 +13,10 @@
             placeholder="Найти по имени или логину"
         />
         <div class="all-recipients__container">
-
+          <RecipientBlock v-for="item in 9" />
         </div>
       </div>
+      <Pagination />
     </div>
     <div @click="closeAllRecipients" class="all-recipients__overlay"></div>
   </div>
@@ -23,6 +24,8 @@
 
 <script setup lang="ts">
 import Search from "@/components/UI/Search/Search.vue";
+import RecipientBlock from "@/components/RecipientBlock/RecipientBlock.vue";
+import Pagination from "@/components/Pagination/Pagination.vue";
 
 const emits = defineEmits([
     'close-all-recipients'

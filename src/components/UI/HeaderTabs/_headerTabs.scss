@@ -43,3 +43,9 @@
     fill: #0188DA;
     transition: all 0.3s;
 }
+
+@media (max-width: 576px) {
+    .tabs {
+        display: none;
+    }
+}

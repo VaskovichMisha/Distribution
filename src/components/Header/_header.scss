@@ -5,4 +5,28 @@
         height: 1px;
         background: #E7ECEF;
     }
+
+    & > button {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .distribution-header {
+        padding: 14px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+
+        &__line {
+            display: none;
+        }
+
+        & > button {
+            display: block;
+            height: 28px;
+            font-size: 11px;
+        }
+    }
 }

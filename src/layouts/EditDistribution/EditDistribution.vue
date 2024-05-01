@@ -55,6 +55,18 @@
                   :select-data="condition"
               />
             </div>
+            <div class="edit-distribution__recipients-block--mobile">
+              <div class="edit-distribution__recipients-amount">
+                <div>
+                  <img src="@/assets/svg/fi-sr-user.svg" alt="">
+                  <span>Получателей: 234</span>
+                </div>
+                <button @click="isAllRecipient = true">Посмотреть всех</button>
+              </div>
+              <div class="edit-distribution__recipients-avatars">
+                <img v-for="i in 8" src="@/assets/image/avatar.png" alt="avatar">
+              </div>
+            </div>
             <div class="edit-distribution__recipients-buttons">
               <Button
                   text="Добавить условие"
@@ -156,15 +168,14 @@ import Select from "@/components/UI/Select/Select.vue";
 import Button from "@/components/UI/Button/Button.vue";
 import GroupSubscribers from "@/components/Conditions/GroupSubscribers/GroupSubscribers.vue";
 import AvailabilityStep from "@/components/Conditions/AvailabilityStep/AvailabilityStep.vue";
-import Planned from "@/views/DistributionView/Planned/Planned.vue";
 import PresenceLabel from "@/components/Conditions/PresenceLabel/PresenceLabel.vue";
 import ContainsTags from "@/components/Conditions/ContainsTags/ContainsTags.vue";
 import MatchFields from "@/components/Conditions/MatchFields/MatchFields.vue";
 import SelectingCondition from "@/components/UI/SelectingCondition/SelectingCondition.vue";
-
-import { ref, computed  } from "vue";
 import ResettingConditions from "@/components/UI/ResettingConditions/ResettingConditions.vue";
 import AllRecipients from "@/components/Modals/AllRecipients/AllRecipients.vue";
+
+import { ref, computed  } from "vue";
 
 const isSelectingCondition = ref(false)
 const isResettingConditions = ref(false)

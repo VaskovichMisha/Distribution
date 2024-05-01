@@ -1,9 +1,12 @@
 <template>
   <div class="distribution-list">
     <div class="distribution-list__head">
-      <div>Название</div>
-      <div>Источник</div>
-      <div>Cтатистика</div>
+      <div>
+        <div>Название</div>
+        <div>Источник</div>
+        <div>Cтатистика</div>
+      </div>
+      <span></span>
     </div>
     <div class="distribution-list__container">
       <DistributionItem

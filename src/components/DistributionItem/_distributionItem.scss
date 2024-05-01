@@ -1,7 +1,7 @@
 .distribution-item {
     display: grid;
     align-items: center;
-    grid-template-columns: 38% 22% 30% 20px;
+    grid-template-columns: 1fr 20px;
     gap: 12px;
     padding: 18px;
     border: 1px solid #75CAFF33;
@@ -9,6 +9,14 @@
     background: #fff;
     cursor: pointer;
     transition: all 0.3s;
+
+    &__container {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 38% 22% 30%;
+        gap: 12px;
+        width: 100%;
+    }
 
     &__title {
         font-size: 14px;
@@ -38,5 +46,40 @@
 
     &:hover {
         background: #F0F8FD;
+    }
+}
+
+@media (max-width: 576px) {
+    .distribution-item {
+        gap: 12px;
+        padding: 14px;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 6px;
+        }
+
+        &__title {
+            font-size: 11px;
+        }
+
+        &__source {
+            font-size: 8px;
+        }
+
+        &__statistic {
+
+            &-item {
+                font-size: 7px;
+                font-weight: 500;
+
+                & > img {
+                    width: 9px;
+                    height: auto;
+                }
+            }
+        }
     }
 }

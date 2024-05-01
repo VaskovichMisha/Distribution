@@ -7,14 +7,37 @@
 
     &__head {
         display: grid;
-        grid-template-columns: 38% 22% 30% 20px;
+        grid-template-columns: 1fr 20px;
         gap: 12px;
         padding: 0 18px;
+
+        & > div {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 38% 22% 30%;
+            gap: 12px;
+        }
     }
 
     &__container {
         display: flex;
         flex-direction: column;
         gap: 9px;
+    }
+}
+
+@media (max-width: 576px) {
+    .distribution-list {
+        gap: 12px;
+
+        &__head {
+           display: none;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
     }
 }
