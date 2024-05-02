@@ -49,7 +49,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 const selectedTab = ref(0)
@@ -66,7 +66,8 @@ const openTab = (tab: any) => {
   router.push(tab.link)
 }
 
-watch(router.currentRoute, () => {
+onMounted(async () => {
+  await router.isReady()
   switch (router.currentRoute.value.path) {
     case '/drafts':
       selectedTab.value = 0

@@ -25,13 +25,23 @@
           </div>
         </div>
         <div class="edit-distribution__message-buttons">
-          <button>
+          <button @click="openDownloadFiles">
             <img src="@/assets/svg/clip.svg" alt="">
           </button>
           <DistrButton
+              @click="openAddButton"
               text="Добавить кнопку"
               color="white"
           />
+<!--     **********     -->
+          <DownloadFiles
+              v-if="visibleDownloadFiles"
+              @cancel-download-files="visibleDownloadFiles = false"
+          />
+          <AddButton
+              v-if="visibleAddButton"
+          />
+
         </div>
       </div>
       <div class="edit-distribution__recipients">
@@ -41,19 +51,19 @@
         </div>
         <div class="edit-distribution__recipients-container">
           <div class="edit-distribution__recipients-setting">
-            <div class="edit-distribution__select">
-              <span>Выберите источник</span>
-              <Select
-                  selected="ifaceup_bot"
-                  :select-data="source"
-              />
-            </div>
-            <div class="edit-distribution__select">
-              <span>Получатели соответствуют</span>
-              <Select
-                  selected="Одному из условий"
-                  :select-data="condition"
-              />
+            <div>
+              <div class="edit-distribution__source">
+                <span>Источник:</span>
+                <span>FaceUpBot (@ifaceup_bot)</span>
+              </div>
+              <div class="edit-distribution__match">
+                <span>Получатели соответствуют</span>
+                <Select
+                    selected="Одному из условий"
+                    :select-data="condition"
+                    border="light"
+                />
+              </div>
             </div>
             <div class="edit-distribution__recipients-block--mobile">
               <div class="edit-distribution__recipients-amount">
@@ -176,23 +186,19 @@ import ResettingConditions from "@/components/UI/ResettingConditions/ResettingCo
 import AllRecipients from "@/components/Modals/AllRecipients/AllRecipients.vue";
 
 import { ref, computed  } from "vue";
+import DownloadFiles from "@/components/UI/DownloadFiles/DownloadFiles.vue";
+import AddButton from "@/components/UI/AddButton/AddButton.vue";
 
+const visibleDownloadFiles = ref(false)
+const visibleAddButton = ref(false)
 const isSelectingCondition = ref(false)
 const isResettingConditions = ref(false)
 const isAllRecipient = ref(false)
 const selectedConditions = ref([])
 
-const source = ref([
-  { name: 'ifaceup_bot', id: 0 },
-  { name: 'ifaceup_bot', id: 1 },
-  { name: 'ifaceup_bot', id: 2 },
-  { name: 'ifaceup_bot', id: 3 },
-  { name: 'ifaceup_bot', id: 4 },
-])
-
 const condition = ref([
   { name: 'Одному из условий', id: 0 },
-  { name: 'Всем условиям', id: 2 },
+  { name: 'Всем условиям', id: 1 },
 ])
 
 const isSelected = computed(() => {
@@ -219,6 +225,16 @@ const resettingCondition = () => {
   selectedConditions.value = []
   isResettingConditions.value = false
   isSelectingCondition.value = false
+}
+
+const openAddButton = () => {
+  visibleAddButton.value = !visibleAddButton.value
+  visibleDownloadFiles.value = false
+}
+
+const openDownloadFiles = () => {
+  visibleDownloadFiles.value = !visibleDownloadFiles.value
+  visibleAddButton.value = false
 }
 
 </script>

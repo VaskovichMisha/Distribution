@@ -24,6 +24,10 @@
         & > img {
             transition: all 0.3s;
         }
+
+        &.light {
+            border-color: #D7EFFD;
+        }
     }
 
     &__list {
@@ -45,6 +49,10 @@
         &::-webkit-scrollbar {
             width: 0;
             height: 0;
+        }
+
+        &.light {
+            border-color: #D7EFFD;
         }
     }
 

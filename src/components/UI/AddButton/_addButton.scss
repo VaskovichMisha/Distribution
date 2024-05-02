@@ -1,0 +1,42 @@
+.add-button {
+    width: 360px;
+    background: #FFFFFF;
+    border: 1px solid #D7EFFD;
+    border-radius: 5px;
+    height: fit-content;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 51;
+
+    &__head {
+        padding: 10px 16px;
+        background: #0188DA0D;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    &__radio-buttons {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &__buttons {
+        padding: 0 16px 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+}

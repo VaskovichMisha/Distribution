@@ -3,6 +3,7 @@
     <div
         @click="selectOpen = !selectOpen"
         class="distribution-select__selected"
+        :class="border"
     >
       {{ selectedChanged ? selectedChanged : selected }}
       <img
@@ -11,7 +12,11 @@
           alt="arrow down"
       >
     </div>
-    <div class="distribution-select__list" v-if="selectOpen">
+    <div
+        v-if="selectOpen"
+        class="distribution-select__list"
+        :class="border"
+    >
       <span
           v-for="item in props.selectData"
           @click="changeSelected(item)"
@@ -29,6 +34,7 @@ import { ref } from "vue";
 const props = defineProps({
   selectData: Array,
   selected: String,
+  border: String,
 })
 
 const selectOpen = ref(false)

@@ -97,9 +97,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-
 
 const tabs = [
   { title: 'Черновики', link: '/drafts', id: 0 },
@@ -119,19 +118,24 @@ const openTab = (tab: any) => {
   router.push(tab.link)
 }
 
-watch(router.currentRoute, () => {
+onMounted(async () => {
+  await router.isReady()
   switch (router.currentRoute.value.path) {
     case '/drafts':
       selectedTab.value = 0
+      selected.value = 'Черновики'
       break
     case '/planned':
       selectedTab.value = 1
+      selected.value = 'Запланированные'
       break
     case '/sent':
       selectedTab.value = 2
+      selected.value = 'Отправленные'
       break
     default:
       selectedTab.value = 0
+      selected.value = 'Черновики'
   }
 })
 </script>

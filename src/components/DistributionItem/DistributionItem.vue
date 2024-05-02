@@ -1,5 +1,8 @@
 <template>
-  <div class="distribution-item">
+  <div
+      @click="$router.push('/edit-distribution')"
+      class="distribution-item"
+  >
     <div class="distribution-item__container">
       <div class="distribution-item__title">{{ props.item?.title }}</div>
       <div class="distribution-item__source">@ifaceup_bot</div>
